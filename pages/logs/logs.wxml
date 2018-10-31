@@ -1,0 +1,30 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <!-- <block wx:for="{{imgurl}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}</text>
+    <image src='{{log}}' mode='widthFix'></image>
+  </block> -->
+    <scroll-view 
+    scroll-y 
+    style="height: 600px;"
+    bindscrolltoupper="upper"
+    bindscrolltolower="lower" 
+    bindscroll="scroll"
+    scroll-into-view="{{toView}}" 
+    scroll-top="{{scrollTop}}"
+    bindscrolltolower="tolower"
+    bindscroll="over">
+   <block wx:for="{{imgurl}}" wx:for-item="log">
+    <view class='box'>
+      <text class="log-item">{{log.title}}</text>
+      <text class="log-item">地区：{{log.area}}</text>
+      <text class="log-item">最近更新时间：{{log.lastupdate_at}}</text>
+      <image src='{{log.cover}}' mode='widthFix'></image>
+    </view>
+   </block>
+   <view wx:if="{{footerlode}}" class='footerlode'>
+    <text>加载中...</text>
+    <image src='../../images/b.jpg'></image>
+   </view>
+  </scroll-view>
+</view>

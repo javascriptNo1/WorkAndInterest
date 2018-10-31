@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!items}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view class="container" wx:if='{{items}}'>
+  <view>
+    <view class='title'>
+     <text>{{items.title}}</text>
+    </view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+      <view class=itemsbox {{item.answar?'green':''}}" wx:if='{{item !== 0}}' wx:for="{{items.options}}" wx:key='index'> 
+          <label class="options radio">
+          {{item.message}}
+          </label>
+        </view>
+      </radio-group>
+    </view>
+    <view class='clean'>
+     <text class='lf'>分类：{{items.classify}}</text>
+     <text class='rg'>收藏：{{items.collect}}</text>
+    </view>
+     <view class='clean'>
+     <text class='lf'>是否公开：{{items.overt?'已公开':'未公开'}}</text>
+    </view>
+     <view wx:if="{{items.assets}}" class='upimg'>
+      <image bindtap='onseecss'  mode='widthFix' src='{{items.assets}}'></image>
+    </view>
+    <view class="usermotto">
+     <button  bindtap="onback">返回</button>
+    </view>
+  </view>
+</view>

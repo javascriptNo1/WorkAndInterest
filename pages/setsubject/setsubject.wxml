@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!state}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view class='container' wx:if='{{state}}'>
+  <view>
+    <textarea bindinput='oninputtitle' class='titleinp' bindblur="bindTextAreaBlur" placeholder="题目" />
+    <view class='remind clean'>
+      <text>选项最少填写二个</text>
+      <picker class='selectanswer' bindchange="bindPickerAnswer" value="{{indexanswer}}" range="{{arrayanswer}}">
+       <view class="picker">
+        设置答案: {{arrayanswer[indexanswer]}}
+       </view>
+      </picker>
+    </view>
+    <input id='0' bindinput='oninput' maxlength='30' placeholder='选项一' type='text'></input>
+    <input id='1' bindinput='oninput' maxlength='30' placeholder='选项二' type='text'></input>
+    <input id='2' bindinput='oninput' maxlength='30' placeholder='选项三' type='text'></input>
+    <input id='3' bindinput='oninput' maxlength='30' placeholder='选项四' type='text'></input>
+    <view class='clean'>
+      <!-- <picker class='selectclass' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+       <view class="picker">
+        点击选择分类: {{array[index]}}
+       </view>
+      </picker> -->
+         <picker class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      选择分类：{{multiArray[0][multiIndex[0]]}}  {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+      <view class='selectovert'>
+        <text>是否公开</text>
+        <switch wx-if='{{overt}}' checked bindchange="switch1Change"/>
+        <switch wx-if='{{!overt}}' bindchange="switch1Change"/>
+      </view>
+    </view>
+    <view class='upimg'>
+      <image bindtap='onseecss' mode='widthFix' class="{{imgurl == '../../images/upload.png' ? '' : 'imgupload'}}" src='{{imgurl}}'></image>
+      <text>点击上传图片</text>
+    </view>
+    <button bindtap='onsubmission' class='submission'>提交</button>
+  </view>
+</view>

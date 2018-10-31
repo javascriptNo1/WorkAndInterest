@@ -1,0 +1,56 @@
+/**index.wxss**/
+.clean:after{
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  content:"";
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  height: 100%;
+  padding-top: 30rpx;
+  align-items:flex-start;
+}
+.container>view{
+  margin-left: 0rpx;
+  float: left;
+  margin-bottom: 50rpx;
+}
+
+.title{
+  font-size: 34rpx;
+}
+picker{
+  margin: 20rpx 0;
+}
+
+.remind{
+  margin: 30rpx auto 10rpx auto;
+}
+.remind text{
+   float: right;
+}
+.remind .selectanswer{
+  float: left;
+}
+
+.selectclass{
+  padding-top:10rpx;
+}
+
+.selectovert{
+
+}
+.selectovert text{
+  padding-right: 10rpx;
+}
+
+.submission{
+  margin-top: 30rpx;
+  color: #fff;
+  background: #fb7299;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}
