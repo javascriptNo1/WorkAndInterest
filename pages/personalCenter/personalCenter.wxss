@@ -1,0 +1,88 @@
+/**index.wxss**/
+page{
+  background: #4f76e4;
+  /* background: -webkit-gradient(linear, left top, left bottom, from(#4f76e4), to(#24b0e8) ); */
+  color: #fff;
+}
+
+button{
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20rpx;
+}
+.rg{
+  float: right;
+}
+.lf{
+  float: left;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  /* margin: 20rpx; */
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  padding-top: 20rpx;
+}
+
+.usermotto {
+  margin-top: 0px;
+}
+
+.banner{
+  width: 100%;
+}
+.banner image{
+  width: 100%;
+}
+
+.items{
+  display: flex;
+  width: 100%;
+  min-height: 100rpx;
+  justify-content: flex-start;
+  flex-direction:column;
+  padding: 10rpx;
+}
+
+.items .item{
+  flex-grow:1;
+  padding: 5rpx 20rpx;
+  height: 66rpx;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 30rpx;
+}
+
+.items .itemsclass{
+  border-bottom: 20rpx solid #eee;
+  padding: 5rpx 20rpx 10rpx 20rpx;
+}
+
+.items .item .iconbox{
+  display: flex;
+  flex-direction:row;
+  align-items:center ;
+}
+.items .item .iconbox text{
+  padding-left: 10rpx;
+}
+.items .item navigator{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+
+.items .item image{
+  width: 50rpx;
+  height: 50rpx;
+}

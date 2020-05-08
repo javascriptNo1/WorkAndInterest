@@ -1,0 +1,4 @@
+.but{
+   background-color: #fb7299;
+   color: #fff;
+}

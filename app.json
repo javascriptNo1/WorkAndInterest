@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/pixiv/pixiv",
+    "pages/gendertest/gendertest",
+    "pages/gendertestseccuss/gendertestseccuss",
+    "pages/personalCenter/personalCenter",
+    "pages/setsubject/setsubject",
+    "pages/myTopic/myTopic",
+    "pages/subjectDetails/subjectDetails",
+    "pages/setting/setting",
+    "pages/mycollectionTopic/mycollectionTopic",
+    "pages/setpaper/setpaper",
+    "pages/mypaper/mypaper",
+    "pages/paperDetails/paperDetails",
+    "pages/mycollectionPaper/mycollectionPaper",
+    "pages/classification/classification",
+    "pages/gendertestpaper/gendertestpaper",
+    "pages/gendertestpaperseccuss/gendertestpaperseccuss",
+    "pages/feedback/feedback",
+    "pages/web/web"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fb7299",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "borderStyle": "white",
+    "selectedColor": "#71dcff",
+    "backgroundColor":"#4f76e4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath":"images/icon/home_1.png"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "text": "分类",
+        "iconPath": "images/icon/classify.png",
+        "selectedIconPath": "images/icon/classify_1.png"
+      },
+      {
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "个人中心",
+        "iconPath": "images/icon/personalCenter.png",
+        "selectedIconPath": "images/icon/personalCenter_1.png"
+      }
+    ]
+  }
+}

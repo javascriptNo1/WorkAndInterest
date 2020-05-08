@@ -1,0 +1,116 @@
+/**index.wxss**/
+page{
+  background: #4f76e4;
+  font-weight: bold;
+}
+.showimgmdoel{
+  background: rgba(0, 0, 0, 1);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+}
+
+.showimgmdoel .assetsimg{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.showimgmdoel .dowimg{
+  position: absolute;
+  margin: 0 auto;
+  top: 30rpx;
+  right: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.clean:after{
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  content:"";
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  height: 100%;
+  padding-top: 30rpx;
+  display: block;
+  color: #fff;
+}
+.container .radius{
+  float: left;
+  width: 70%;
+}
+.container>view{
+ width: 100%;
+ text-align: center;
+ margin-bottom: 30rpx;
+}
+.progress{
+ margin-top: 7px; 
+ width: 100%;
+ border-radius: 10px;
+}
+.titlenumber{
+  color: #02dfbe
+}
+
+.title{
+  text-align: left;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+   font-weight: bold;
+}
+
+.upimg{
+  margin: 0rpx auto 40rpx auto;
+  text-align: center;
+}
+
+.optionsbox{
+  min-width: 50%;
+  display: block;
+  /* width: 40%; */
+  margin: 0 auto;
+}
+
+.itemsbox{
+  text-align: center;
+  border: 4rpx solid #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx;
+}
+
+.checked{
+   background: -webkit-gradient(linear, left top, left bottom, from(#29f6d7), to(#02dfbe) );
+  color: #fff;
+}
+
+.usermotto button{
+  margin-bottom: 20rpx;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}
+
+.tips{
+  margin: 100rpx auto;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+.but{
+   background-color: #fb7299;
+   color: #fff;
+   margin-top: 60%;
+   width: 20%;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}

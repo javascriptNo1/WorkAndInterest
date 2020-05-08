@@ -1,0 +1,175 @@
+/**index.wxss**/
+page{
+  /* background: -webkit-gradient(linear, left top, left bottom, from(#4f76e4), to(#24b0e8) ); */
+  background: #4f76e4;
+  color: #fff;
+  height: auto;
+}
+
+.clean:after{
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  content:"";
+}
+.rg{
+  float: right;
+  margin-right: 20rpx;
+}
+.lf{
+  float: left;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  height: 100%;
+  padding-top: 30rpx;
+}
+.container .radius{
+  float: left;
+  width: 70%;
+}
+.container>view{
+ width: 100%;
+ text-align: center;
+ margin-bottom: 30rpx;
+}
+.progress{
+ margin-top: 7px; 
+ width: 100%;
+ border-radius: 10px;
+}
+.titlenumber{
+  color: #fb7299
+}
+
+.operationbox{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+}
+.operationbox .paperpoencomment image{
+  margin-top: 28rpx;
+}
+
+
+.title{
+  text-align: left;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+}
+.papertitle{
+  margin-top: 30rpx;
+}
+
+.opencomment{
+  font-size: 26rpx;
+}
+
+.opencomment image{
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 30rpx;
+}
+.opencomment .cloo{
+  width:54rpx;
+  height:54rpx;
+}
+
+.usermotto button{
+  width: 20%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fb7299;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+  color: #fff;
+}
+.share{
+    min-width: 26%;
+    background-color: #fb7299;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+    color: #fff;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+}
+.items{
+  display: flex;
+  width: 100%;
+  min-height: 100rpx;
+  justify-content: flex-start;
+  flex-direction:column;
+}
+
+.items .item{
+  margin: 10rpx auto;
+  border-radius: 20rpx;
+  align-items: center;
+  flex-grow:1;
+  padding: 20rpx 30rpx 20rpx 20rpx;
+  background: -webkit-gradient(linear, left top, left bottom, from(#71dcff), to(#24b0e8) );
+  color: #fff;
+   width: 92%;
+  height:auto;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.items .item .iconbox{
+  display: flex;
+  flex-direction:row;
+  align-items:center ;
+  width:100%;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #fff;
+}
+.items .item .iconbox .content{
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  text-align: left;
+}
+
+
+.items .item .operation .classify{
+    background: -webkit-gradient(linear, left top, left bottom, from(#0c47eb), to(#4f76e4) );
+  border-radius: 30rpx;
+  padding: 10rpx 20rpx;
+  min-width: 70rpx;
+  text-align: center;
+}
+
+.items .item .operation .username{
+  width: 204rpx;
+  overflow: auto;
+  white-space:nowrap;
+}
+.items .item .operation .username::-webkit-scrollbar{
+  display: none;
+}
+
+.items .item .operation .collect{
+   background: -webkit-gradient(linear, left top, left bottom, from(#0c47eb), to(#4f76e4) );
+  border-radius: 30rpx;
+  padding: 10rpx;
+}
+
+.items .item .operation{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+  width: 100%;
+}
+.items .item .operation button{
+  padding: 0rpx 18rpx;
+  margin: 0;
+  text-align: center;
+  font-size: 28rpx;
+  height: 70rpx;
+   background: -webkit-gradient(linear, left top, left bottom, from(#fdd32c), to(#f8b603) );
+  color: #fff;
+}

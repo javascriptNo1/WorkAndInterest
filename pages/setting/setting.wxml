@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!state}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view wx:if='{{state}}' class='container'>
+  <view class='clean'>
+    <view class='title'>题目相关</view>
+    <picker class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <view class="picker">
+        题目的默认选择分类：{{multiArray[0][multiIndex[0]]}}  {{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+    <view class='selectovert'>
+      <text>题目默认是否公开</text>
+      <switch color="#71dcff" checked='{{overt}}' bindchange="switch1Change"/>
+    </view>
+  </view>
+   <view class='clean'>
+    <view class='title'>试卷相关</view>
+    <picker class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange2" value="{{testPapermultiIndex}}" range="{{testPapermultiArray}}">
+      <view class="picker">
+        试卷的默认选择分类：{{testPapermultiArray[0][testPapermultiIndex[0]]}}  {{testPapermultiArray[1][testPapermultiIndex[1]]}}
+      </view>
+    </picker>
+    <view class='selectovert'>
+      <text>试卷默认是否公开</text>
+      <switch color="#71dcff" checked='{{testPaperovert}}' bindchange="switch1Change2"/>
+    </view>
+  </view>
+   <button bindtap='onsubmission' class='submission'>保存</button>
+</view>

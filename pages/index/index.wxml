@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class='selectclassbox'>
+   <picker bindcancel='oncancel' class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      筛选分类：{{multiArray[0][multiIndex[0]]}}  {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+      <text class='iscompltet'>已做完</text>
+      <switch color='#71dcff' bindchange="switch1Change"/>
+  <view class='searchbox'>
+   <input placeholder-style='color:#fff' bindinput='oninput' bindconfirm='onseach' confirm-type='search' class='search' placeholder='请输入关键词'></input>
+   <button bindtap='onseachbut' class='searchbut'>搜索</button>
+  </view>
+ 
+  </view>
+ <scroll-view 
+    scroll-y
+    class='test'
+    style="{{'height:'+h+'px'}};"
+    bindscrolltoupper="upper"
+    bindscrolltolower="lower" 
+    bindscroll="scroll"
+    scroll-into-view="{{toView}}" 
+    scroll-top="{{scrollTop}}"
+    bindscrolltolower="tolower"
+    bindscroll="over">
+    <view class='items'>
+      <view  
+      catchtap='onpaper' 
+      id='{{item._id}}' 
+      class='item' 
+      wx:for="{{tolicarr}}" 
+      wx:key='index'>
+          <view  id='{{item._id}}' class='iconbox clean'>
+            <view  id='{{item._id}}' class='content'>{{index+1}}、{{item.title}}</view>
+          </view>
+          <view  id='{{item._id}}' class='operation'>
+           <text class='classify username' id='{{item._id}}'>{{item.username}}</text>
+           <text class='classify' id='{{item._id}}'>{{item.classify}}</text>
+            <text class='collect' id='{{item._id}}'>收藏：{{item.collect}}</text>
+             <text wx:if='{{item.iscomplete}}' class='collect iscomplete' id='{{item._id}}'>已做完</text>
+          </view>
+      </view>
+  </view> 
+    <view class='tips2' wx:if='{{!tolicarr.length && state2}}'>{{message}}</view>
+    <view style='text-align: center' wx:if='{{!state2}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+ <view wx:if='{{nodata && alltolicarr!=""}}' class='buttontis'>没有更多了</view>
+  </scroll-view>
+ </view>

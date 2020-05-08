@@ -1,0 +1,134 @@
+/**index.wxss**/
+page{
+  background: #4f76e4;
+  /* font-weight: bold; */
+  color: #fff;
+}
+
+.clean:after{
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  content:"";
+}
+.rg{
+  float: right;
+  margin-right: 20rpx;
+}
+.lf{
+  float: left;
+}
+.showimgmdoel{
+  background: rgba(0, 0, 0, 1);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+.showimgmdoel .assetsimg{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.showimgmdoel .dowimg{
+  position: absolute;
+  margin: 0 auto;
+  top: 30rpx;
+  right: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 30rpx;
+  height: 100%;
+  padding-top: 30rpx;
+}
+.container .radius{
+  float: left;
+  width: 70%;
+}
+.container>view{
+ width: 100%;
+ text-align: center;
+ margin-bottom: 30rpx;
+}
+.progress{
+ margin-top: 7px; 
+ width: 100%;
+ border-radius: 10px;
+}
+.titlenumber{
+  color: #fb7299
+}
+
+.title{
+  text-align: left;
+  font-size: 35rpx;
+  margin-bottom: 30rpx;
+  /* font-weight: bold; */
+}
+
+.itemsbox{
+   text-align: center;
+  border: 4rpx solid #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx;
+  /* font-weight: bold; */
+}
+.itemsbox label{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.green{
+   background: -webkit-gradient(linear, left top, left bottom, from(#29f6d7), to(#02dfbe) );
+}
+
+.opencomment{
+  font-size: 26rpx;
+  margin-top: 25rpx;
+}
+
+.opencomment image{
+  width: 46rpx;
+  height: 46rpx;
+  margin-left: 30rpx;
+}
+.opencomment .cloo{
+  width:54rpx;
+  height:54rpx;
+}
+
+.operationbox{
+  margin-top: 20rpx;
+}
+
+.operationbox .paperpoencomment{
+  float: right;
+}
+
+.upimg{
+  margin: 40rpx auto;
+  text-align: center;
+}
+.remarks{
+  text-align: left;
+  margin-top: 15rpx
+}
+.usermotto button{
+  width: 20%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}

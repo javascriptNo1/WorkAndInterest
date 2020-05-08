@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' 
+      wx:if='{{!items.length}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+ <view class='tips' wx:if='{{datastate}}'>该试卷已删除</view>
+ <button class='but but2'  wx:if='{{datastate}}' bindtap="onbutclick">返回首页</button>
+<view wx:if='{{!datastate}}' class="container">
+<view class='paper'>
+    <view class='title'>
+     <text>{{paperdata.title}}</text>
+    </view>
+    <view class='clean'>
+     <text class='lf'>分类：{{paperdata.classify}}</text>
+     <text class='rg'>收藏：{{paperdata.collect}}</text>
+    </view>
+     <view class='clean'>
+     <text class='lf'>是否公开：{{paperdata.overt?'已公开':'未公开'}}</text>
+    </view>
+    <view>
+       <view class='opencomment clean paperpoencomment'>
+         <image 
+        id='{{paperdata._id}}' 
+        bindtap='onreportpaper' 
+        class='lf'
+        src="{{reportstate?'../../images/icon/Report.png':'../../images/icon/Report_1.png'}}"></image> 
+        <image 
+        id='{{paperdata._id}}' 
+        bindtap='oncollectionpaper'
+        class='lf cloo' 
+        src="{{collstate?'../../images/icon/mycollection_5.png':'../../images/icon/mycollection_4.png'}}"></image>
+         <button wx:if="{{userInfo}}" class='rg share' open-type='share'>分享答题结果</button>
+           <button class='rg share share2' wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取昵称后分享 </button>
+      </view>
+    </view>
+</view>
+    <view class='success'>
+      答对 {{fraction/5}} 题，共 {{items.length}} 题
+    </view>
+    <view class='itmes' wx:for='{{items}}' wx:key='index'>
+      <text class='title'>{{index+1}}. {{item.title}}</text>
+      <view wx:if='{{selet.message}}' wx:key='index' wx:for="{{item.options}}" wx:for-item="selet" class="options {{selet.state?'red':''}}  {{selet.answar?'green':''}}">
+       {{selet.message}}
+      </view>
+      <view class='opencomment clean'>
+         <!-- <image 
+        id='{{item._id}}' 
+        bindtap='onreport' 
+        class='lf'
+        src="{{item.reportstate?'../../images/icon/Report.png':'../../images/icon/Report_1.png'}}"></image> 
+        <image 
+        id='{{item._id}}' 
+        bindtap='oncollection'
+        class='lf cloo' 
+        src="{{item.collstate?'../../images/icon/mycollection_5.png':'../../images/icon/mycollection_4.png'}}"></image> -->
+        <button id='{{index}}' bindtap='ondetails'>详情</button>
+      </view>
+    </view>
+    <button class='but' bindtap="onbutclick">返回首页</button>
+</view>

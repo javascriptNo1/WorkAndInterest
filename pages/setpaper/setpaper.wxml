@@ -1,0 +1,125 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!state}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view wx:if='{{state}}' class='container'>
+  <view class='clean'>
+    <textarea placeholder-class='titleinpplaceholder' bindinput='oninputtitle' class='titleinp' bindblur="bindTextAreaBlur" placeholder="试卷标题" />
+    <picker class='selectclass1' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      选择分类：{{multiArray[0][multiIndex[0]]}}  {{multiArray[1][multiIndex[1]]}}
+    </view>
+  </picker>
+  <view class='selectovert'>
+    <text>试卷是否公开</text>
+    <switch color='#71dcff' checked="{{overt}}" bindchange="switch1Change"/>
+  </view>
+  </view>
+  <view class='tips lf'>
+   <view>已加入的题目：{{options.length}}</view>
+    <view>请从我的题目或收藏的题目中选择加入到试卷</view>
+  </view>
+  <view class='options'>
+     <view class='title'>
+       <text bindtap='onmysubjet' class='{{paperSubject?"active":""}}'>我的题目</text>
+       <text>|</text>
+       <text bindtap='onmycollectionsubjet' class='{{paperSubject?"":"active"}}'>我收藏的题目</text>
+     </view>
+     <view class='subjectbox' hidden='{{!paperSubject}}'>
+      <view class='selectclassbox'>
+   <picker bindcancel='oncancel' class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange1" value="{{multiIndex1}}" range="{{multiArray1}}">
+    <view class="picker">
+      筛选分类：{{multiArray1[0][multiIndex1[0]]}}  {{multiArray1[1][multiIndex1[1]]}}
+    </view>
+  </picker>
+      <text class='iscompltet'>是否公开</text>
+      <switch color='#71dcff' checked='{{overt1}}' bindchange="switch1Change1"/>
+  <view class='searchbox'>
+   <input placeholder-style='color:#fff' bindinput='oninput1' bindconfirm='onseach' confirm-type='search' class='search' placeholder='请输入关键词'></input>
+   <button bindtap='onseachbut1' class='searchbut'>搜索</button>
+  </view>
+ 
+  </view>
+      <scroll-view 
+    scroll-y 
+    style="height: 400px;transition: all 0.5s;"
+    bindscrolltolower="lower" 
+    bindscroll="scroll"
+    scroll-into-view="{{toView}}" 
+    scroll-top="{{scrollTop}}"
+    bindscrolltolower="tolower"
+    bindscroll="over">
+    <view class='items'>
+      <view id='{{index}}' class='item' bindtap='onsee' wx:for="{{tolicarr}}" wx:key='index'>
+          <view id='{{index}}' class='iconbox'>
+            <text id='{{index}}' class='content'>{{item.title}}</text>
+          </view>
+          <view id='{{index}}' class='operation'>
+             <text class='classify username' id='{{index}}'>{{item.username}}</text>
+           <text class='classify' id='{{index}}'>{{item.classify}}</text>
+            <text class='collect' id='{{index}}'>收藏：{{item.collect}}</text>
+            <button class='add' hidden ='{{item.add}}' catchtap='onadd' id='{{item._id}}'>加入</button>
+            <button hidden ='{{!item.add}}' catchtap='onremove' id='{{item._id}}'>移除</button>
+          </view>
+      </view>
+      <view style='text-align: center;margin-top: 50%' wx:if='{{!seachstate1}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+  <view wx:if='{{!state1 && seachstate1}}' class='buttontis'>加载中...</view>
+ <view wx:if='{{nodata1 && tolicarr.length!=0}}' class='buttontis'>没有更多了</view>
+  </view> 
+    <view class='tips1' wx:if='{{!tolicarr.length && state1}}'>没有符合条件的题目，或您未定义题目</view>
+  </scroll-view>
+     </view>
+     <view class='paperbox' hidden='{{paperSubject}}'>
+       <view class='selectclassbox'>
+   <picker bindcancel='oncancel' class='selectclass' mode="multiSelector" bindcolumnchange="bindMultiPickerColumnChange2" value="{{multiIndex2}}" range="{{multiArray2}}">
+    <view class="picker">
+      筛选分类：{{multiArray2[0][multiIndex2[0]]}}  {{multiArray2[1][multiIndex2[1]]}}
+    </view>
+  </picker>
+      <text class='iscompltet'>是否公开</text>
+      <switch color='#71dcff' checked='{{overt2}}' bindchange="switch1Change2"/>
+  <view class='searchbox'>
+   <input placeholder-style='color:#fff' bindinput='oninput2' bindconfirm='onseach' confirm-type='search' class='search' placeholder='请输入关键词'></input>
+   <button bindtap='onseachbut2' class='searchbut'>搜索</button>
+  </view>
+ 
+  </view>
+      <scroll-view 
+    scroll-y 
+    style="height: 400px;transition: all 0.5s;"
+    bindscrolltolower="lower" 
+    bindscroll="scroll"
+    scroll-into-view="{{toView}}" 
+    scroll-top="{{scrollTop}}"
+    bindscrolltolower="tolower2"
+    bindscroll="over">
+    <view class='items'>
+      <view id='{{index}}' bindtap='onsee2' class='item' wx:for="{{tolicarr2}}" wx:key='index'>
+          <view id='{{index}}' class='iconbox'>
+            <text id='{{index}}' class='content'>{{item.title}}</text>
+          </view>
+          <view id='{{index}}' class='operation'>
+           <text class='classify username' id='{{index}}'>{{item.username}}</text>
+           <text class='classify' id='{{index}}'>{{item.classify}}</text>
+            <text class='collect' id='{{index}}'>收藏：{{item.collect}}</text>
+            <button class='add' hidden ='{{item.add}}' catchtap='onadd2' id='{{item._id}}'>加入</button>
+            <button hidden ='{{!item.add}}' catchtap='onremove2' id='{{item._id}}'>移除</button>
+          </view>
+      </view>
+           <view style='text-align: center;margin-top: 50%' wx:if='{{!seachstate2}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+       <view wx:if='{{!state2 && seachstate2}}' class='buttontis'>加载中...</view>
+ <view wx:if='{{nodata2 && tolicarr2.length!=0}}' class='buttontis'>没有更多了</view>
+  </view> 
+    <view class='tips1' wx:if='{{!tolicarr2.length && state2}}'>没有符合条件的题目，或您未收藏题目</view>
+  </scroll-view>
+     </view>
+  </view>
+   <button bindtap='onsubmiss' class='submission'>提交</button>
+</view>

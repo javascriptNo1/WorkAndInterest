@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!tolicarr}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view class="container" wx:if='{{tolicarr}}'>
+  <view>
+    <view class='title'>
+     <text>{{items.title}}</text>
+    </view>
+    <view class='clean'>
+     <text class='lf'>分类：{{items.classify}}</text>
+     <text class='rg'>收藏：{{items.collect}}</text>
+    </view>
+      <view class='clean'>
+     <text class='lf'>出卷人：{{items.username}}</text>
+     <text class='rg'>是否公开：{{items.overt?'已公开':'未公开'}}</text>
+    </view>
+     <view class='clean operationbox'>
+      <view class='opencomment clean paperpoencomment'>
+       <image 
+        id='{{items._id}}' 
+        bindtap='onreportpaper' 
+        class='lf'
+        src="{{reportstate?'../../images/icon/Report.png':'../../images/icon/Report_1.png'}}"></image> 
+        <image 
+        wx:if='{{colltion}}'
+        id='{{items._id}}' 
+        bindtap='oncollectionpaper'
+        class='lf cloo' 
+        src="{{collstate?'../../images/icon/mycollection_5.png':'../../images/icon/mycollection_4.png'}}"></image>
+     </view>
+     <button class='rg share' open-type='share'>分享试卷</button>
+    </view>
+ 
+    <view class='papertitle'>试卷题目</view>
+       <view class='items'>
+      <view catchtap='onsee' id='{{index}}' class='item' wx:for="{{tolicarr}}" wx:key='index'>
+          <view catchtap='onsee' id='{{index}}' class='iconbox'>
+            <view catchtap='onsee' id='{{index}}' class='content'>{{index+1}}、{{item.title}}           </view>
+          </view>
+          <view class='operation'>
+          <text class='classify username' id='{{index}}'>{{item.username}}</text>
+           <text class='classify' id='{{index}}'>{{item.classify}}</text>
+            <text class='collect' id='{{index}}'>收藏：{{item.collect}}</text>
+            <!-- <button catchtap='ondelete' id='{{item._id}}'>删除</button> -->
+            <!-- <button bindtap='onsee' id='{{index}}'>详情</button> -->
+          </view>
+        
+          <!-- <view class='operation'>
+            <button bindtap='ondelete' id='{{item._id}}'>删除</button>
+            <button bindtap='onsee' id='{{index}}'>详情</button>
+          </view> -->
+      </view>
+      <view style='text-align: center;margin-top: 50%' wx:if='{{!tolicarr}}'>
+        <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto'  src='../../images/icon/load.gif'>
+        </image>
+        <text>加载中...</text>
+      </view>
+  </view> 
+    <view class="usermotto">
+     <button  bindtap="onback">返回</button>
+    </view>
+  </view>
+</view>

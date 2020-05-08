@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view style='text-align: center;margin-top: 50%' wx:if='{{!items}}'>
+  <image style='width:60rpx;height:60rpx;display:block;margin: 0 auto' src='../../images/icon/load.gif'></image>
+  <text>加载中...</text>
+</view>
+<view bindtap='onhiddenimg' hidden='{{showimg}}' class='showimgmdoel'>
+  <image class='assetsimg' data-img='{{items.assets}}'  mode='widthFix' src='{{items.assets}}'></image>
+  <image bindtap='ondownloadFile' data-img='{{items.assets}}' class='dowimg' src='../../images/icon/dow.png'></image>
+</view>
+<view class="container" wx:if='{{items}}'>
+  <view>
+    <view class='title'>
+     <text>{{items.title}}</text>
+    </view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+      <view class=itemsbox {{item.answar?'green':''}}" wx:if='{{item !== 0}}' wx:for="{{items.options}}" wx:key='index'> 
+          <label class="options radio">
+          {{item.message}}
+          </label>
+        </view>
+      </radio-group>
+    </view>
+    <view class='clean'>
+     <text class='lf'>分类：{{items.classify}}</text>
+     <text class='rg'>收藏：{{items.collect}}</text>
+    </view>
+     <view class='clean operationbox'>
+      <text class='lf'>出题人：{{items.username}}</text>
+      <text class='rg'>是否公开：{{items.overt?'已公开':'未公开'}}</text>
+    </view>
+       <view class='opencomment clean paperpoencomment'>
+       <image 
+        id='{{items._id}}' 
+        bindtap='onreport' 
+        class='lf'
+        src="{{reportstate?'../../images/icon/Report.png':'../../images/icon/Report_1.png'}}"></image> 
+        <image 
+        wx:if='{{colltion}}'
+        id='{{items._id}}' 
+        bindtap='oncollection'
+        class='lf cloo' 
+        src="{{collstate?'../../images/icon/mycollection_5.png':'../../images/icon/mycollection_4.png'}}"></image>
+     </view>
+     <view wx:if="{{items.assets}}" class='upimg'>
+      <image bindtap='onshowimg' data-img='{{items.assets}}'  mode='widthFix' src='{{items.assets}}'></image>
+    </view>
+     <view wx:if="{{items.remarks}}" class='remarks'>备注：{{items.remarks}}</view>
+    <view class="usermotto">
+     <button  bindtap="onback">返回</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,94 @@
+/**index.wxss**/
+page{
+    background: -webkit-gradient(linear, left top, left bottom, from(#4f76e4), to(#24b0e8) );
+  color: #fff;
+  height: auto;
+}
+page .container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4f76e4), to(#24b0e8) );
+  color: #fff;
+  height: auto;
+  /* background: #4f76e4; */
+}
+
+.clean:after{
+  display: block;
+  width: 0;
+  height: 0;
+  clear: both;
+  content:"";
+}
+.container{
+  /* width: 90%; */
+  margin: 0 auto;
+  font-size: 30rpx;
+  height: 100%;
+  padding-top: 30rpx;
+}
+.container view{
+  margin-left: 0rpx;
+}
+.titleinp{
+  border: 1rpx solid #DEDEDE;
+  border-radius: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 120rpx;
+}
+.remind{
+  margin: 30rpx auto 10rpx auto;
+}
+.remind text{
+   float: right;
+}
+.remind .selectanswer{
+  float: left;
+}
+.placeholder{
+  color: #fff;
+}
+input{
+  border: 1rpx solid #DEDEDE;
+  border-radius: 10rpx;
+  padding-left: 30rpx;
+  height: 80rpx;
+  margin-bottom: 40rpx;
+}
+
+
+.selectclass{
+  float: left;
+  padding-top:10rpx;
+}
+
+.selectovert{
+  float: right;
+}
+.selectovert text{
+  padding-right: 10rpx;
+}
+.upimg{
+  margin: 15rpx auto 15rpx auto;
+  text-align: center;
+}
+.upimg image{
+  width: 28%;
+  display: block;
+  margin: 0 auto;
+}
+.upimg .imgupload{
+  width: 100%;
+}
+.upimg text{
+  display: block;
+  padding-top: 10rpx;
+}
+.remarks{
+  margin: 0 auto 15rpx auto;
+}
+.submission{
+  margin-bottom: 30rpx;
+  color: #fff;
+  background: #fb7299;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fb7299), to(#E84B6E) );
+}

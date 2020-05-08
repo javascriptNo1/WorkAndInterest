@@ -1,0 +1,20 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  display: block;
+  margin: 10rpx;
+}
+.box{
+  margin-top: 50rpx
+}
+.footerlode{
+  margin-top: 30rpx;
+  text-align: center;
+}
+.footerlode image{
+  width: 60rpx;
+  height: 60rpx;
+}

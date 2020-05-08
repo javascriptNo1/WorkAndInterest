@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class='container'>
+  <!-- 1239694462@qq.com -->
+  <!-- <web-view src="https://www.wuzhenlu.cn/game.html"></web-view> -->
+  <view class='webobox'>
+    <navigator
+    url="../web/web?weburl=https://www.wuzhenlu.cn/game.html&gamename=ooxx" 
+    class='webitme'>
+      <image class='icon' src='../../images/gameimg/rightandwrong.png'></image>
+      <text>ooxx</text>
+    </navigator>
+     <navigator
+    url="../web/web?weburl=https://www.wuzhenlu.cn/html5-throw-box&gamename=重力下落积木" 
+    class='webitme'>
+      <image class='icon box' src='../../images/gameimg/caisse_metal_02.jpg'></image>
+      <text>重力下落积木</text>
+    </navigator>
+         <navigator
+    url="../web/web?weburl=https://www.wuzhenlu.cn/Memory-card&gamename=记忆翻牌" 
+    class='webitme'>
+      <image class='icon box' src='../../images/gameimg/jiyi.png'></image>
+      <text>记忆翻牌</text>
+    </navigator>
+  </view>
+  <button bindtap='onsubmission' class='submission'>返回</button>
+</view>
